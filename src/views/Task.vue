@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     updateTaskProperty(e, key) {
-      console.log("heree");
       this.$store.commit("UPDATE_TASK", {
         task: this.task,
         key,
@@ -42,9 +41,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="css">
+.task {
+  @apply flex items-center flex-wrap shadow mb-2 py-2 px-2 rounded bg-white text-grey-darkest no-underline;
+}
+
 .task-view {
   @apply relative flex flex-row bg-white pin mx-4 m-32 mx-auto py-4 text-left rounded shadow;
   max-width: 700px;
+}
+
+.task-bg {
+  @apply pin absolute;
+  background: rgba(0,0,0,0.5);
 }
 </style>
